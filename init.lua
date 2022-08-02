@@ -1,6 +1,6 @@
 local S = minetest.get_translator("hades_extravessels")
 
-minetest.register_node(":vessels:drinking_glass", {
+minetest.register_node(":hades_vessels:drinking_glass", {
 	description = S("Empty Drinking Glass"),
 	drawtype = "plantlike",
 	tiles = {"vessels_drinking_glass.png"},
@@ -19,7 +19,7 @@ minetest.register_node(":vessels:drinking_glass", {
 })
 
 minetest.register_craft( {
-	output = "vessels:drinking_glass 14",
+	output = "hades_vessels:drinking_glass 14",
 	recipe = {
 		{ "hades_core:glass", "", "hades_core:glass" },
 		{ "hades_core:glass", "", "hades_core:glass" },
@@ -27,7 +27,7 @@ minetest.register_craft( {
 	}
 })
 
-minetest.register_node(":vessels:steel_bottle", {
+minetest.register_node(":hades_vessels:steel_bottle", {
 	description = S("Empty Heavy Steel Bottle"),
 	drawtype = "plantlike",
 	tiles = {"vessels_steel_bottle.png"},
@@ -46,7 +46,7 @@ minetest.register_node(":vessels:steel_bottle", {
 })
 
 minetest.register_craft( {
-	output = "vessels:steel_bottle 5",
+	output = "hades_vessels:steel_bottle 5",
 	recipe = {
 		{ "hades_core:steel_ingot", "", "hades_core:steel_ingot" },
 		{ "hades_core:steel_ingot", "", "hades_core:steel_ingot" },
@@ -56,16 +56,19 @@ minetest.register_craft( {
 
 minetest.register_craft( {
 	type = "shapeless",
-	output = "vessels:glass_fragments",
+	output = "hades_vessels:glass_fragments",
 	recipe = {
-		"vessels:drinking_glass",
-		"vessels:drinking_glass",
+		"hades_vessels:drinking_glass",
+		"hades_vessels:drinking_glass",
 	},
 })
 
 minetest.register_craft( {
 	type = "cooking",
 	output = "hades_core:steel_ingot",
-	recipe = "vessels:steel_bottle",
+	recipe = "hades_vessels:steel_bottle",
 })
+
+minetest.register_alias("vessels:drinking_glass", "hades_vessels:drinking_glass")
+minetest.register_alias("vessels:steel_bottle", "hades_vessels:steel_bottle")
 
